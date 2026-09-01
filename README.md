@@ -19,15 +19,6 @@ Este proyecto implementa una **arquitectura monolítica** organizada bajo el pat
 
 Esta separación replica exactamente el diagrama de **Arquitectura Monolítica** propuesto en el enunciado del taller (Vista ↔ Controlador ↔ Modelo, con el Modelo dividido en Lógica, Acceso y Conexión), aplicado aquí a las tres entidades del dominio (Usuarios/Empresas, Personas/Ventas) en vez de a una sola clase de ejemplo.
 
-## Cumplimiento de los requisitos del taller
-
-- ✅ **Patrón de diseño / estilo arquitectónico** → MVC (Vista–Controlador–Modelo) + DAO dentro del Modelo.
-- ✅ **Conexión a base de datos** → SQL Server vía `pyodbc`, gestionada en `conexion.py`.
-- ✅ **Programación Orientada a Objetos** → cada capa está implementada como clases (`Logica*`, `Acceso*`, `Conexion`), con instanciación y composición entre ellas (por ejemplo, `LogicaVentas` compone `AccesoVentas` y `AccesoPersonas`).
-- ✅ **Operaciones CRUD** → alta, consulta, edición y eliminación para Usuarios, Empresas y Ventas, expuestas como endpoints REST y consumidas desde el frontend.
-- ✅ **Lenguaje de programación libre** → Python (backend) + JavaScript/React (frontend).
-
-
 ## Arquitectura general
 
 El proyecto está dividido en dos aplicaciones independientes que se comunican por HTTP/JSON, siguiendo el flujo **Vista → Controlador → Modelo → Base de datos** del diagrama del taller:
